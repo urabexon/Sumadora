@@ -1,0 +1,2 @@
+module PostBrainsHelper
+end

@@ -1,0 +1,188 @@
+// Place all the styles related to the informations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "./variables";
+
+.main{
+
+  &__team{
+    background-color: $main_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--wrapper{
+      border-radius: 20px;
+      background-color: $base_color;
+      padding: 30px;
+    }
+
+    &--title{
+      font-weight: bold;
+      border-bottom: 1px solid $line_color_bluegray;
+      margin-bottom : 20px;
+      padding-bottom: 10px;
+    }
+
+    &--textitem{
+      margin-bottom: 30px;
+    }
+
+    &--textitem:last-child{
+      margin-bottom: 0;
+    }
+
+    &--heading{
+      font-weight: bold;
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__privacy{
+    background-color: $main_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--wrapper{
+      border-radius: 20px;
+      background-color: $base_color;
+      padding: 30px;
+    }
+
+    &--title{
+      font-weight: bold;
+      border-bottom: 1px solid $line_color_bluegray;
+      margin-bottom : 20px;
+      padding-bottom: 10px;
+    }
+
+    &--textitem{
+      margin-bottom: 30px;
+    }
+
+    &--textitem:nth-child(2),
+    &--textitem:last-child{
+      margin-bottom: 0;
+    }
+
+    &--heading{
+      font-weight: bold;
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+
+    &--textchild{
+      display: inline-block;
+      margin: 15px 0;
+    }
+  }
+
+  &__contact{
+    background-color: $main_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--wrapper{
+      border-radius: 20px;
+      background-color: $base_color;
+      padding: 30px;
+    }
+
+    &--title{
+      font-weight: bold;
+      border-bottom: 1px solid $line_color_bluegray;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    &--content{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &--text{
+      margin: 40px 0;
+    }
+
+    &--formlist{
+      display: flex;
+      margin-left: 17px;
+    }
+
+    &--formitem{
+      margin-bottom: 40px;
+    }
+
+    &--label{
+      width: 140px;
+    }
+
+    &--form,
+    &--bodyform{
+      width: 400px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--bodyform{
+      vertical-align: top;
+      height: 350px;
+    }
+
+    &--checkarea,
+    &--button{
+      text-align: center;
+    }
+
+    &--checkbox{
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--action{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $accent_color;
+      border-radius: 5px;
+      background-color: $accent_color;
+      color: $main_color;
+    }
+  }
+
+  &__completed{
+    background-color: $main_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--wrapper{
+      border-radius: 20px;
+      background-color: $base_color;
+      padding: 30px;
+    }
+
+    &--title{
+      font-weight: bold;
+      border-bottom: 1px solid $line_color_bluegray;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    &--content{
+      display: flex;
+      justify-content: center;
+    }
+
+    &--text{
+      margin: 40px 0;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+<header class="header sticky-top">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <h1 class="navbar-brand">
+        <%= link_to image_tag("sumadora_logo.svg"), root_path %>
+      </h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="header__nav">
+          <ul class="navbar-nav">
+            <li class="nav-item mr-3">
+              <%= link_to "About", about_path, class: "nav-link" %>
+            </li>
+            <!--accordion_menu-->
+            <li class="nav-item dropdown mr-3">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categoty
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="dropdown-item">
+                  <%= link_to "脳に直接効く", post_brains_path %>
+                </li>
+                <li class="dropdown-item">
+                  <%= link_to "内臓からよくする", post_visceras_path %>
+                </li>
+                <li class="dropdown-item">
+                  <%= link_to "筋肉からよくする", post_muscles_path %>
+                </li>
+              </ul>
+            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item mr-3">
+                <button class="header__nav--mybtn">
+                  <%= link_to "マイページ", users_mypage_path, class: "nav-link header__nav--myaction" %>
+                </button>
+              </li>
+              <li class="nav-item mr-2">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item mr-3">
+                <button class="nav-link header__nav--signbtn" data-toggle="modal" data-target="#signUpModal" >
+                  <span class="header__nav--signaction">会員登録</span>
+                </button>
+              </li>
+              <li class="nav-item mr-2">
+                <%= link_to "ログイン", "", "data-toggle": "modal", "data-target": "#loginModal" ,class: "nav-link" %>
+              </li>
+            <% end %>
+            <li class="nav-item header__nav--search">
+              <%= link_to "", "" , "data-toggle": "modal", "data-target": "#searchModal", class: "fas fa-search header__nav--searchaction" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,39 @@
+<section class="main__brainindex">
+  <div class="container">
+    <div class="main__brainindex--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__brainindex--title">
+          脳に直接効く
+        </h2>
+      </div>
+      <div class="main__brainindex--area">
+        <% @post_brain_pages.each do |post_brain| %>
+          <%= link_to post_brain_path(post_brain.id) do %>
+            <article class="main__brainindex--card">
+              <div class="main__brainindex--thumbnail">
+                <%= attachment_image_tag(post_brain, :image, :fill, 250, 170, format: "jpeg", class: "main__brainindex--image") %>
+              </div>
+              <div class="main__brainindex--textarea">
+                <h3 class="main__brainindex--heading">
+                  <%= post_brain.title.truncate(50) %>
+                </h3>
+                <p class="main__brainindex--text">
+                  <%= markdown(post_brain.body.truncate(70)) %>
+                </p>
+                <p class="main__brainindex--date">
+                  <%= post_brain.posted_date %>
+                  <span class="main__brainindex--view fas fa-eye">
+                    <%= post_brain.impressions_count %>
+                  </span>
+                </p>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="main__brainindex--pages">
+        <%= paginate @post_brain_pages %>
+      </div>
+    </div>
+  </div>
+</section>

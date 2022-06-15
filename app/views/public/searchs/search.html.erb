@@ -1,0 +1,100 @@
+<section class="main__search">
+  <div class="container">
+    <div class="main__search--inner">
+      <% if @model == "postbrain" %>
+        <div class="row">
+          <h2 class="col-lg-12 main__search--title">
+            <%= @content %>の検索結果
+          </h2>
+        </div>
+        <div class="main__search--area">
+          <% @records.each do |post_brain| %>
+            <%= link_to post_brain_path(post_brain.id) do %>
+              <article class="main__search--card">
+                <div class="main__search--thumbnail">
+                  <%= attachment_image_tag(post_brain, :image, :fill, 250, 170, format: "jpeg", class: "main__search--image") %>
+                </div>
+                <div class="main__search--textarea">
+                  <h3 class="main__search--heading">
+                    <%= post_brain.title.truncate(50) %>
+                  </h3>
+                  <p class="main__search--text">
+                    <%= markdown(post_brain.body.truncate(70)) %>
+                  </p>
+                  <p class="main__search--date">
+                    <%= post_brain.posted_date %>
+                    <span class="main__search--view fas fa-eye">
+                      <%= post_brain.impressions_count %>
+                    </span>
+                  </p>
+                </div>
+              </article>
+            <% end %>
+          <% end %>
+        </div>
+      <% elsif @model == "postviscera" %>
+        <div class="row">
+          <h2 class="col-lg-12 main__search--title">
+            <%= @content %>の検索結果
+          </h2>
+        </div>
+        <div class="main__search--area">
+          <% @records.each do |post_viscera| %>
+            <%= link_to post_viscera_path(post_viscera.id) do %>
+              <article class="main__search--card">
+                <div class="main__search--thumbnail">
+                  <%= attachment_image_tag(post_viscera, :image, :fill, 250, 170, format: "jpeg", class: "main__search--image") %>
+                </div>
+                <div class="main__search--textarea">
+                  <h3 class="main__search--heading">
+                    <%= post_viscera.title.truncate(50) %>
+                  </h3>
+                  <p class="main__search--text">
+                    <%= markdown(post_viscera.body.truncate(70)) %>
+                  </p>
+                  <p class="main__search--date">
+                    <%= post_viscera.posted_date %>
+                    <span class="main__search--view fas fa-eye">
+                      <%= post_viscera.impressions_count %>
+                    </span>
+                  </p>
+                </div>
+              </article>
+            <% end %>
+          <% end %>
+        </div>
+      <% elsif @model == "postmuscle" %>
+        <div class="row">
+          <h2 class="col-lg-12 main__search--title">
+            <%= @content %>の検索結果
+          </h2>
+        </div>
+        <div class="main__search--area">
+          <% @records.each do |post_muscle| %>
+            <%= link_to post_muscle_path(post_muscle.id) do %>
+              <article class="main__search--card">
+                <div class="main__search--thumbnail">
+                  <%= attachment_image_tag(post_muscle, :image, :fill, 250, 170, format: "jpeg", class: "main__search--image") %>
+                </div>
+                <div class="main__search--textarea">
+                  <h3 class="main__search--heading">
+                    <%= post_muscle.title.truncate(50) %>
+                  </h3>
+                  <p class="main__search--text">
+                    <%= markdown(post_muscle.body.truncate(70)) %>
+                  </p>
+                  <p class="main__search--date">
+                    <%= post_muscle.posted_date %>
+                    <span class="main__search--view fas fa-eye">
+                      <%= post_muscle.impressions_count %>
+                    </span>
+                  </p>
+                </div>
+              </article>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,146 @@
+// Place all the styles related to the post_brains controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "./variables";
+
+.main{
+
+  &__brainindex{
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    &--title::after{
+      content: "";
+      flex-grow: 1;
+      margin: 0 3px;
+      height: 1px;
+      background-color: $line_color_bluegray;
+    }
+
+    &--area{
+      border-top: 1px dotted $line_color_bluegray;
+      padding-top: 40px;
+    }
+
+    &--card{
+      border-bottom: 1px dotted $line_color_bluegray;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      display: flex;
+    }
+
+    &--image{
+      border-radius: 10px;
+    }
+
+    &--textarea{
+      padding-left: 30px;
+    }
+
+    &--heading{
+      font-size: 25px;
+    }
+
+    &--text{
+      font-size: 15px;
+    }
+
+    &--date{
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--view{
+      font-size: 15px;
+      padding-top: 3px;
+    }
+
+    &--pages{
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__brainshow{
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--image{
+      border-radius: 10px;
+    }
+
+    &--textarea{
+      padding: 40px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      border-left: 10px solid $accent_color;
+      padding-left: 10px;
+    }
+
+    &--date{
+      margin: 25px 0 35px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--view{
+      font-size: 15px;
+      padding-top: 3px;
+    }
+
+    &--text{
+      border-top: 1px dotted $line_color_bluegray;
+      border-bottom: 1px dotted $line_color_bluegray;
+      padding: 40px 0;
+    }
+
+    &--buttonlist{
+      display: flex;
+    }
+
+    &--buttonitem:first-child{
+      padding-right: 40px;
+    }
+
+    &--amazonlink{
+      width: 250px;
+      height: 85px;
+      border: 1px solid $line_color_bluegray;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: $base_color;
+      font-weight: bold;
+      font-size: 20px;
+      color: $font_color_black;
+    }
+
+    &--iheablink{
+      width: 250px;
+      height: 85px;
+      border: 1px solid $accent_color;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: $accent_color;
+      font-weight: bold;
+      font-size: 20px;
+      color: $font_color_white;
+    }
+  }
+}

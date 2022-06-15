@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sumadora</title>
+    <meta name="description" contact="Sumadoraは脳の働きを改善するサプリメントを解説、紹介しているサイトです。
+    脳に直接影響を与えるもの、内臓の働きを改善して結果的に脳に良い影響を与えるもの、筋肉の細胞を改善しつつ脳に良い
+    影響を与えるもの、この3つの観点からサプリメントを紹介しております。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if Rails.env.production?%>
+      <%= render "layouts/google_analytics" %>
+    <% end %>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </head>
+
+  <body>
+    <%= render "layouts/header" %>
+    <% unless user_signed_in? %>
+      <%= render "users/registrations/new" %>
+      <%= render "users/sessions/new" %>
+    <% end %>
+    <%= render "layouts/search" %>
+    <main class="main">
+      <%= render "layouts/flash" %>
+      <%= yield %>
+    </main>
+    <% if controller.controller_name != "informations" %>
+      <%= render "layouts/ranking" %>
+    <% end %>
+    <%= render "layouts/banner" %>
+    <%= render "layouts/footer" %>
+  </body>
+</html>

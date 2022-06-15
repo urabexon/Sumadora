@@ -1,0 +1,37 @@
+<section class="main__brainshow">
+  <div class="container">
+    <div class="main__brainshow--inner">
+      <article class="main__brainshow--area">
+        <div class="main__brainshow--thumbnail">
+          <%= attachment_image_tag(@postbrain, :image, :fill, 1110, 500, format: "jpeg", class: "main__brainshow--image") %>
+        </div>
+        <div class="main__brainshow--textarea">
+          <h2 class="main__brainshow--title">
+            <%= @postbrain.title%>
+          </h2>
+          <p class="main__brainshow--date">
+            <%= @postbrain.posted_date%>
+            <span class="main__brainshow--view fas fa-eye">
+              <%= number_with_delimiter(@pageviews) %>
+            </span>
+          </p>
+          <div class="main__brainshow--text">
+            <%= markdown(@postbrain.body) %>
+          </div>
+        </div>
+      </article>
+      <div class="main__brainshow--buttonlist">
+        <div class="main__brainshow--buttonitem">
+          <%= link_to @postbrain.amazon_link, target: :_blank, rel: "noopener noreferrer" do %>
+            <button class="main__brainshow--amazonlink">Amazonで購入</button>
+          <% end %>
+        </div>
+        <div class="main__brainshow--buttonitem">
+          <%= link_to @postbrain.iheab_link, target: :_blank, rel: "noopener noreferrer" do %>
+            <button class="main__brainshow--iheablink">iHerbで購入</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

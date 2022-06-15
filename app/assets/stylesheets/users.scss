@@ -1,0 +1,56 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "./variables";
+
+.main{
+
+   &__mypage{
+    background-color: $base_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    &--title::after{
+      content: "";
+      flex-grow: 1;
+      margin: 0 3px;
+      height: 1px;
+      background-color: $line_color_bluegray;
+    }
+
+    &--profile{
+      margin-top: 10px;
+    }
+
+    &--textarea{
+      margin: 10px 0;
+    }
+
+    &--text{
+      font-size: 20px;
+      border-bottom: 1px dotted $line_color_bluegray;
+      padding-bottom: 5px;
+    }
+
+    &--logout{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $warning_color;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: $warning_color;
+      color: $font_color_white;
+    }
+  }
+}

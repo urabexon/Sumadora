@@ -1,0 +1,39 @@
+<section class="main__visceraindex">
+  <div class="container">
+    <div class="main__visceraindex--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__visceraindex--title">
+          内臓からよくする
+        </h2>
+      </div>
+      <div class="main__visceraindex--area">
+        <% @post_viscera_pages.each do |post_viscera| %>
+          <%= link_to post_viscera_path(post_viscera.id) do %>
+            <article class="main__visceraindex--card">
+              <div class="main__visceraindex--thumbnail">
+                <%= attachment_image_tag(post_viscera, :image, :fill, 250, 170, format: "jpeg", class: "main__visceraindex--image") %>
+              </div>
+              <div class="main__visceraindex--textarea">
+                <h3 class="main__visceraindex--heading">
+                  <%= post_viscera.title.truncate(50) %>
+                </h3>
+                <p class="main__visceraindex--text">
+                  <%= markdown(post_viscera.body.truncate(70)) %>
+                </p>
+                <p class="main__visceraindex--date">
+                  <%= post_viscera.posted_date %>
+                  <span class="main__visceraindex--view fas fa-eye">
+                    <%= post_viscera.impressions_count %>
+                  </span>
+                </p>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="main__visceraindex--pages">
+        <%= paginate @post_viscera_pages %>
+      </div>
+    </div>
+  </div>
+</section>

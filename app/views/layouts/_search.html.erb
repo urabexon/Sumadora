@@ -1,0 +1,39 @@
+<section class="modal fade" id="searchModal">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal__search">
+      <div class="container">
+        <div class="modal-header">
+          <h2 class="modal-title">
+            記事を探す
+          </h2>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal__search--formlist">
+            <%= form_with url: search_path, method: :get, local: true do |f| %>
+              <div class="modal__search--formitem">
+                <%= f.search_field :content, :placeholder => "キーワードを入力", class: "modal__search--form" %>
+              </div>
+              <div class="modal__search--formitem">
+                <%= f.select :model, options_for_select({ "脳に直接効く" => "postbrain", "内臓からよくする" => "postviscera", "筋肉からよくする" => "postmuscle" }), {},{class: "modal__search--select"}  %>
+              </div>
+              <div class="modal__search--formitem">
+                <%= f.select :method, options_for_select({ "完全一致で検索する" => "perfect", "部分一致で検索する" => "partical" }), {},{class: "modal__search--select"} %>
+              </div>
+              <div class="modal__search--buttonlist">
+                <div class="modal__search--buttonitem">
+                  <%= f.button "検索する", class: "modal__search--action fa fa-search" %>
+                </div>
+                <div class="modal__search--buttonitem">
+                  <button class="modal__search--return" type="button" class="close" data-dismiss="modal">戻る</button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

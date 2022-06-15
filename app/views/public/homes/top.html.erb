@@ -1,0 +1,117 @@
+<section class="main__visual">
+  <div class="container">
+    <div class="main__visual--inner">
+      <div class="row">
+          <h2 class="col-lg-12 main__visual--text">
+              サプリメントで、
+              <br>
+              さらに生産性を
+              <br>
+              高めよう。
+          </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!--postbrain-->
+<section class="main__postbrain">
+  <div class="container">
+    <div class="main__postbrain--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__postbrain--title">
+          脳に直接効く
+        </h2>
+      </div>
+      <div class="main__postbrain--area slick">
+        <% @post_brains.first(8).each do |post_brain| %>
+          <%= link_to post_brain_path(post_brain.id) do %>
+            <article class="main__postbrain--card">
+              <div class="main__postbrain--thumbnail">
+                <%= attachment_image_tag(post_brain, :image, :fill, 250, 170, format: "jpeg", class: "main__postbrain--image") %>
+              </div>
+              <div class="main__postbrain--textarea">
+                <h3 class="main__postbrain--heading">
+                  <%= post_brain.title.truncate(30) %>
+                </h3>
+                <p class="main__postbrain--date">
+                  <%= post_brain.posted_date %>
+                </p>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to post_brains_path do %>
+        <button class="main__postbrain--button">もっと見る</button>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--postviscera-->
+<section class="main__postviscera">
+  <div class="container">
+    <div class="main__postviscera--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__postviscera--title">
+          内臓からよくする
+        </h2>
+      </div>
+      <div class="main__postviscera--area slick">
+        <% @post_visceras.first(8).each do |post_viscera| %>
+          <%= link_to post_viscera_path(post_viscera.id) do %>
+            <article class="main__postviscera--card">
+              <div class="main__postviscera--thumbnail">
+                <%= attachment_image_tag(post_viscera, :image, :fill, 250, 170, format: "jpeg", class: "main__postviscera--image") %>
+              </div>
+              <div class="main__postviscera--textarea">
+                <h3 class="main__postviscera--heading">
+                  <%= post_viscera.title.truncate(30) %>
+                </h3>
+                <p class="main__postviscera--date">
+                  <%= post_viscera.posted_date %>
+                </p>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to post_visceras_path do %>
+        <button class="main__postviscera--button">もっと見る</button>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--postmuscle-->
+<section class="main__postmuscle">
+  <div class="container">
+    <div class="main__postmuscle--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__postmuscle--title">
+          筋肉からよくする
+        </h2>
+      </div>
+      <div class="main__postmuscle--area slick">
+        <% @post_muscles.first(8).each do |post_muscle| %>
+          <%= link_to post_muscle_path(post_muscle.id) do %>
+            <article class="main__postmuscle--card">
+              <div class="main__postmuscle--thumbnail">
+                <%= attachment_image_tag(post_muscle, :image, :fill, 250, 170, format: "jpeg", class: "main__postmuscle--image") %>
+              </div>
+              <div class="main__postmuscle--textarea">
+                <h3 class="main__postmuscle--heading">
+                  <%= post_muscle.title.truncate(30) %>
+                </h3>
+                <p class="main__postmuscle--date">
+                  <%= post_muscle.posted_date %>
+                </p>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+      <%= link_to post_muscles_path do %>
+        <button class="main__postmuscle--button">もっと見る</button>
+      <% end %>
+    </div>
+  </div>
+</section>

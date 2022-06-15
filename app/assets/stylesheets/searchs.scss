@@ -1,0 +1,76 @@
+// Place all the styles related to the searchs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "./variables";
+
+.main{
+
+  &__search{
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    &--title::after{
+      content: "";
+      flex-grow: 1;
+      margin: 0 3px;
+      height: 1px;
+      background-color: $line_color_bluegray;
+    }
+
+    &--area{
+      border-top: 1px dotted $line_color_bluegray;
+      padding-top: 40px;
+    }
+
+    &--card{
+      border-bottom: 1px dotted $line_color_bluegray;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+      display: flex;
+    }
+
+    &--image{
+      border-radius: 10px;
+    }
+
+    &--textarea{
+      padding-left: 30px;
+    }
+
+    &--heading{
+      font-size: 25px;
+    }
+
+    &--text{
+      font-size: 15px;
+    }
+
+    &--date{
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--view{
+      font-size: 15px;
+      padding-top: 3px;
+    }
+
+    &--pages{
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

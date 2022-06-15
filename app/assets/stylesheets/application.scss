@@ -1,0 +1,493 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+@import "toastr";
+@import "slick-theme";
+@import "slick";
+@import "./variables";
+
+html, body, a{
+  font-family: -apple-system, BlinkMacSystemFont, Roboto,
+  "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic,
+  "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
+  color: $font_color_black;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: $font_color_black;
+  text-decoration: none;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: $font_color_white;
+  background-color: $accent_color;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+.g-recaptcha{
+  margin-left: 145px;
+}
+
+.slide-arrow {
+  z-index: 100;
+  cursor: pointer;
+  bottom: 0;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  width: 0;
+  background-color: rgba(255, 255, 255, 0);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #333333;
+}
+.prev-arrow {
+  left: -45px;
+}
+.next-arrow {
+  right: -20px;
+}
+
+.header{
+  background-color: $base_color;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  height: 80px;
+
+  & img{
+    padding-top: 5px;
+    height: 50px;
+    width: 190px;
+  }
+
+ &__nav{
+    margin-left: auto;
+
+    &--mybtn{
+      border: 1px solid $line_color_bluegray;
+      border-radius: 9999px;
+      background-color: $base_color;
+    }
+
+    &--signbtn{
+      border: 1px solid $accent_color;
+      border-radius: 9999px;
+      background-color: $accent_color;
+    }
+
+    &--signaction{
+      padding: 0 10px;
+      color: $font_color_white;
+    }
+
+    &--search{
+      border-left: 1px solid $line_color_bluegray;
+      padding-left: 13px;
+    }
+
+    &--searchaction{
+      padding-top: 7px;
+      font-size: 27px;
+    }
+  }
+}
+
+.modal{
+
+  &__signup{
+    background-color: $main_color;
+
+    &--form{
+      width: 710px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--formlist{
+      margin-top: 15px;
+    }
+
+    &--formitem{
+      width: 327px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--button{
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    &--action{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $accent_color;
+      border-radius: 5px;
+      background-color: $accent_color;
+      color: $font_color_white;
+    }
+
+    &--text{
+      margin-right: auto;
+    }
+  }
+
+  &__login{
+    background-color: $main_color;
+
+    &--password{
+      margin-top: 15px;
+    }
+
+    &--form{
+      width: 710px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--button{
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    &--action{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $line_color_bluegray;
+      border-radius: 5px;
+      background-color: $base_color;
+    }
+
+    &--text{
+      margin-right: auto;
+    }
+  }
+
+  &__destroy{
+    background-color: $main_color;
+
+    &--buttonlist{
+      display: flex;
+      justify-content: center;
+    }
+
+    &--buttonitem{
+      padding: 20px 40px;
+    }
+
+    &--mypagereturn{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $line_color_bluegray;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: $base_color;
+      color: $font_color_black;
+    }
+
+    &--withdrawal{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $warning_color;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background-color: $warning_color;
+      color: $font_color_white;
+    }
+  }
+
+  &__search{
+    background-color: $main_color;
+
+    &--formitem{
+      margin-bottom: 15px;
+    }
+
+    &--form{
+      width: 100%;
+      height: 65px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--select{
+      width: 100%;
+      height: 40px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+      font-size: 18px;
+    }
+
+    &--buttonlist{
+      display: flex;
+      border-top: 1px solid $line_color_bluegray;
+      padding: 25px 0;
+    }
+
+    &--buttonitem{
+      padding-right: 30px;
+    }
+
+    &--action{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $accent_color;
+      border-radius: 5px;
+      background-color: $accent_color;
+      color: $font_color_white;
+    }
+
+    &--return{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $line_color_bluegray;
+      border-radius: 5px;
+      background-color: $base_color;
+    }
+  }
+}
+
+.main{
+
+  &__forgot{
+    background-color: $base_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    &--title::after{
+      content: "";
+      flex-grow: 1;
+      margin: 0 3px;
+      height: 1px;
+      background-color: $line_color_bluegray;
+    }
+
+    &--text{
+      margin-top: 15px, 0, 10px, 0;
+    }
+
+    &--formitem{
+      width: 710px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+      margin-top: 5px;
+    }
+
+    &--linkarea{
+      margin-top: 15px;
+    }
+
+    &--button{
+      margin-bottom: 15px;
+    }
+
+    &--action{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $accent_color;
+      border-radius: 5px;
+      background-color: $accent_color;
+      color: $font_color_white;
+    }
+  }
+
+  &__myedit{
+    background-color: $base_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    &--title::after{
+      content: "";
+      flex-grow: 1;
+      margin: 0 3px;
+      height: 1px;
+      background-color: $line_color_bluegray;
+    }
+
+    &--formlist{
+      margin-top: 15px;
+    }
+
+    &--username,
+    &--email,
+    &--password,
+    &--newpassword{
+      padding-bottom: 10px;
+    }
+
+    &--verification{
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    &--formitem{
+      width: 710px;
+      border-radius: 5px;
+      border: 1px solid $line_color_bluegray;
+    }
+
+    &--action{
+      width: 190px;
+      height: 40px;
+      border: 1px solid $accent_color;
+      border-radius: 5px;
+      background-color: $accent_color;
+      color: $font_color_white;
+    }
+  }
+
+  &__pagination{
+
+    & span{
+      padding: 15px;
+      margin-right: 10px;
+      border: 1px solid $line_color_bluegray;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    & span.current{
+      background-color: $accent_color;
+      color: $base_color;
+    }
+
+    & span:hover{
+      background-color: #DEE2E6;
+      transition: background-color 0.5s;
+    }
+  }
+
+  &__ranking{
+    background-color: $main_color;
+
+    &--inner{
+      padding: 60px 0;
+    }
+
+    &--title{
+      font-weight: bold;
+      padding-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    &--title::after{
+      content: "";
+      flex-grow: 1;
+      margin: 0 3px;
+      height: 1px;
+      background-color: $base_color;
+    }
+
+    &--area{
+      margin-top: 15px;
+    }
+
+    &--headertab{
+      border-bottom: 1px solid $base_color;
+      padding-bottom: 40px;
+    }
+
+    &--card{
+      border-bottom: 1px solid $base_color;
+      padding: 25px 0;
+      display: flex;
+    }
+
+    &--image{
+      border-radius: 10px;
+    }
+
+    &--textarea{
+      padding-left: 30px;
+    }
+
+    &--heading{
+      font-size: 20px;
+    }
+
+    &--date{
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--view{
+      font-size: 15px;
+      padding-top: 3px;
+    }
+
+  }
+}
+
+.banner__area{
+  height: 300px;
+  background-color: $accent_color;
+  background-image: image-url('sumadora_banner_image.png');
+  background-repeat: no-repeat;
+
+  &--inner{
+    padding: 105px 0;
+  }
+
+  &--title{
+    font-weight: bold;
+    color: $font_color_white;
+  }
+
+  &--text{
+    color: $font_color_white;
+  }
+}
+
+.footer{
+
+  & img{
+    padding-top: 13px;
+    height: 50px;
+    width: 175px;
+  }
+}

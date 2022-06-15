@@ -1,0 +1,92 @@
+<section class="main__ranking">
+  <div class="container">
+    <div class="main__ranking--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__ranking--title">
+          人気の記事
+        </h2>
+      </div>
+      <div class="main__ranking--area">
+        <ul class="nav nav-pills nav-fill main__ranking--headertab" role="tablist">
+          <li class="nav-item">
+            <%= link_to "脳に直接効く", "#brain", "data-toggle": "tab", "aria-current": "page", "role": "tab", "aria-controls": "brain", "aria-selected": "true", class: "nav-link active", id: "brain-tab" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "内臓からよくする", "#viscera", "data-toggle": "tab", "role": "tab", "aria-controls": "viscera", "aria-selected": "false", class: "nav-link", id: "viscera-tab" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "筋肉からよくする", "#muscle", "data-toggle": "tab", "role": "tab", "aria-controls": "muscle", "aria-selected": "false", class: "nav-link", id: "muscle-tab" %>
+          </li>
+        </ul>
+        <div class="tab-content main__ranking--content">
+          <div class="tab-pane fade show active" id="brain" role="tabpanel" aria-labelledby="brain-tab">
+            <% $post_brain_views.each do |post_brain| %>
+              <%= link_to post_brain_path(post_brain.id) do %>
+                <article class="main__ranking--card">
+                  <div class="main__ranking--thumbnail">
+                    <%= attachment_image_tag(post_brain, :image, :fill, 160, 80, format: "jpeg", class: "main__ranking--image") %>
+                  </div>
+                  <div class="main__ranking--textarea">
+                    <h3 class="main__ranking--heading">
+                      <%= post_brain.title.truncate(30) %>
+                    </h3>
+                    <p class="main__ranking--date">
+                      <%= post_brain.posted_date %>
+                      <span class="main__ranking--view fas fa-eye">
+                        <%= post_brain.impressions_count %>
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="viscera" role="tabpanel" aria-labelledby="viscera-tab">
+            <% $post_viscera_views.each do |post_viscera| %>
+              <%= link_to post_viscera_path(post_viscera.id) do %>
+                <article class="main__ranking--card">
+                  <div class="main__ranking--thumbnail">
+                    <%= attachment_image_tag(post_viscera, :image, :fill, 160, 80, format: "jpeg", class: "main__ranking--image") %>
+                  </div>
+                  <div class="main__ranking--textarea">
+                    <h3 class="main__ranking--heading">
+                      <%= post_viscera.title.truncate(30) %>
+                    </h3>
+                    <p class="main__ranking--date">
+                      <%= post_viscera.posted_date %>
+                      <span class="main__ranking--view fas fa-eye">
+                        <%= post_viscera.impressions_count %>
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="tab-pane fade" id="muscle" role="tabpanel" aria-labelledby="muscle-tab">
+            <% $post_muscle_views.each do |post_muscle| %>
+              <%= link_to post_muscle_path(post_muscle.id) do %>
+                <article class="main__ranking--card">
+                  <div class="main__ranking--thumbnail">
+                    <%= attachment_image_tag(post_muscle, :image, :fill, 160, 80, format: "jpeg", class: "main__ranking--image") %>
+                  </div>
+                  <div class="main__ranking--textarea">
+                    <h3 class="main__ranking--heading">
+                      <%= post_muscle.title.truncate(30) %>
+                    </h3>
+                    <p class="main__ranking--date">
+                      <%= post_muscle.posted_date %>
+                      <span class="main__ranking--view fas fa-eye">
+                        <%= post_muscle.impressions_count %>
+                      </span>
+                    </p>
+                  </div>
+                </article>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+<section class="main__contact">
+  <div class="container">
+    <div class="main__contact--inner">
+      <div class="main__contact--wrapper">
+        <div class="row">
+          <h2 class="col-lg-12 main__contact--title">
+            お問い合わせ
+          </h2>
+        </div>
+        <div class="main__contact--content">
+          <p class="main__contact--text">
+            お問い合わせいただきました内容を確認後、ご連絡させていただきます。
+            <br>
+            ※回答にはお時間をいただく場合がございます。
+          </p>
+          <div class="main__contact--formlist">
+            <%= form_with model: @contact, url: informations_path, local: true do |f| %>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">お名前</label>
+                <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "main__contact--form" %>
+              </div>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">ふりがな</label>
+                <%= f.text_field :name_kana, autofocus: true, autocomplete: "name_kana", class: "main__contact--form" %>
+              </div>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">会社名</label>
+                <%= f.text_field :company, autofocus: true, autocomplete: "company", class: "main__contact--form" %>
+              </div>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">所属部署名</label>
+                <%= f.text_field :department, autofocus: true, autocomplete: "department", class: "main__contact--form" %>
+              </div>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">メールアドレス</label>
+                <%= f.text_field :email, autofocus: true, autocomplete: "email", class: "main__contact--form" %>
+              </div>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">電話番号</label>
+                <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number", class: "main__contact--form" %>
+              </div>
+              <div class="main__contact--formitem">
+                <label class="main__contact--label">お問い合わせ</label>
+                <%= f.text_area :body, autofocus: true, autocomplete: "body", class: "main__contact--bodyform" %>
+              </div>
+              <div class="main__contact--formitem">
+                <p class="main__contact--checkarea">
+                  <%= f.check_box :agreement, :as => :boolean, checked:false, class: "main__contact--checkbox" %>
+                  プライバシーポリシーに同意する
+                </p>
+                <%= recaptcha_tags %>
+              </div>
+              <div class="main__contact--button">
+                <%= f.submit "送信する", class: "main__contact--action" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

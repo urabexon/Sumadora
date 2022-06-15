@@ -1,0 +1,39 @@
+<section class="main__muscleindex">
+  <div class="container">
+    <div class="main__muscleindex--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__muscleindex--title">
+          筋肉からよくする
+        </h2>
+      </div>
+      <div class="main__muscleindex--area">
+        <% @post_muscle_pages.each do |post_muscle| %>
+          <%= link_to post_muscle_path(post_muscle.id) do %>
+            <article class="main__muscleindex--card">
+              <div class="main__muscleindex--thumbnail">
+                <%= attachment_image_tag(post_muscle, :image, :fill, 250, 170, format: "jpeg", class: "main__muscleindex--image") %>
+              </div>
+              <div class="main__muscleindex--textarea">
+                <h3 class="main__muscleindex--heading">
+                  <%= post_muscle.title.truncate(50) %>
+                </h3>
+                <p class="main__muscleindex--text">
+                  <%= markdown(post_muscle.body.truncate(70)) %>
+                </p>
+                <p class="main__muscleindex--date">
+                  <%= post_muscle.posted_date %>
+                  <span class="main__muscleindex--view fas fa-eye">
+                    <%= post_muscle.impressions_count %>
+                  </span>
+                </p>
+              </div>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="main__muscleindex--pages">
+        <%= paginate @post_muscle_pages %>
+      </div>
+    </div>
+  </div>
+</section>

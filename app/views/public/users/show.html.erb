@@ -1,0 +1,37 @@
+<section class="main__mypage">
+  <div class="container">
+    <div class="main__mypage--inner">
+      <div class="row">
+        <h2 class="col-lg-12 main__mypage--title">
+          <%= @user.name %>さんのマイページ
+        </h2>
+      </div>
+      <div class="main__mypage--profile">
+        <div class="main__mypage--textarea">
+          <div class="row">
+            <p class="col-lg-12 main__mypage--text">
+              <%= @user.email %>
+            </p>
+          </div>
+          <div class="row">
+            <p class="col-lg-12 main__mypage--text">
+              <%= link_to edit_user_registration_path do %>
+                <span>登録情報を編集する</span>
+                <i class="fas fa-angle-right"></i>
+              <% end %>
+            </p>
+          </div>
+        </div>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <button class="main__mypage--logout">ログアウト</button>
+        <% end %>
+        <div>
+          <%= link_to "Sumadora会員の退会はこちら", "", "data-toggle": "modal", "data-target": "#destroyModal" %>
+          <%= render "public/users/destroy" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="main__postfavorite">
+</section>
